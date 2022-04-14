@@ -1,0 +1,145 @@
+*{
+    box-sizing: border-box;
+}
+.main {
+    width: 400px;
+    min-height: 400px;
+    /* background-color: aqua  ; */
+    margin-left: auto;
+    margin-right: auto;
+    /* z-index: 1; */
+}
+
+p {
+    margin: 0;
+    text-align: center;
+    background-color: transparent;
+    line-height: 400px;
+    width: 400px;
+    position: absolute;
+    /* push back this "Hi" paragraph */
+    z-index: -1;
+}
+
+
+.topleft, .bottomleft {
+    float: left;
+    width: 200px;
+    height: 200px;
+    transition: transform;
+    transition-duration: 1.2s;
+    transition-timing-function: ease-in-out;
+}
+.topright, .bottomright {
+    float: right;
+    width: 200px;
+    height: 200px;
+    transition: transform;
+    transition-duration: 1.2s;
+    transition-timing-function: ease-in-out;
+}
+
+.box.transp1, .box.transp2, .box.transp3, .box.transp4 {
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+}
+
+.box.transp1, .box.transp3 {
+    float: left;
+}
+
+.box.transp2, .box.transp4 {
+    float: right;
+}
+
+.clearfix{
+    clear: both;
+}
+
+.box.red {
+    width: 100px;
+    height: 100px;
+    float: right;
+    background-color: red;
+}
+
+.box.yellow {
+    width: 100px;
+    height: 100px;
+    float: left;
+    background-color: yellow;
+}
+
+.box.blue {
+    width: 100px;
+    height: 100px;
+    float: right;
+    background-color: blue;
+}
+
+.box.green {
+    width: 100px;
+    height: 100px;
+    float: left;
+    background-color: green;
+}
+
+/* First hover then pick each child and do the transform*/
+
+div.main:hover div.topleft {
+    transform: rotate(90deg);
+}
+div.main:hover div.topright {
+    transform: rotate(-90deg);
+}
+div.main:hover div.bottomleft {
+    transform: rotate(-90deg);
+}
+div.main:hover div.bottomright {
+    transform: rotate(90deg);
+}
+
+/* 
+Below code is for animation.
+This is not the answer... but it looks cool!! 
+Comment above 4 hovers and then uncomment below code.*/
+
+/* .topleft {
+    animation: redrotate 1.2s ease-in-out 0s infinite;
+    animation-direction:alternate;
+}
+.bottomleft {
+    animation: bluerotate 1.2s ease-in-out 0s infinite;
+    animation-direction: alternate;
+}
+.topright {
+    animation: yellowrotate 1.2s ease-in-out 0s infinite;
+    animation-direction: alternate;
+}
+.bottomright {
+    animation: greenrotate 1.2s ease-in-out 0s infinite;
+    animation-direction: alternate;
+}
+
+
+@keyframes redrotate {
+    to {
+        transform: rotate(90deg);
+    }
+}
+@keyframes bluerotate {
+    to {
+        transform: rotate(-90deg);
+    }
+}
+@keyframes yellowrotate {
+    to {
+        transform: rotate(-90deg);
+    }
+}
+@keyframes greenrotate {
+    to {
+        transform: rotate(90deg);
+    }
+} */
