@@ -1,0 +1,140 @@
+* {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    min-width: 4%;
+    height: 80vh;
+    background-color: #F0F0F0;
+    float: left;
+}
+img {
+    background: transparent;
+}
+
+header.inline {
+    width: 96%;
+    height: 45vh;
+    background-color: #454545;
+    float: right;
+}
+
+section.inline {
+    height: 35vh;
+    width: 96%;
+    /* background-color: rgb(72, 82, 235); */
+    float: right;
+}
+
+div.clearfix {
+    clear: both ;
+}
+
+footer {
+    width: 100%;
+    height: 20vh;
+    background-color: #43689B;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer img{
+    width: 15vh;
+    margin: 10px;
+    padding: 5px;
+}
+
+.innerfooterflex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.innerfooterflex p {
+    padding: 3px;
+}
+
+nav img{
+    display: block;
+    padding: 3vh 0;
+    width: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/* .fleximgs {
+    display: flex;
+    flex-direction: column;
+} */
+
+
+table{
+    margin: 15px;
+    width: 96%;
+    background: transparent;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table td {
+    padding: 8px;
+    /* border: 1px solid green; */
+}
+
+table tr:nth-child(2n) {
+    background-color: lightgrey;
+}
+
+header.inline {
+    display: flex;
+}
+
+header.inline img {
+    padding: 15px;
+    margin: 0 15px;
+}
+
+header div.container {
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: space-between;
+}
+
+header div.container p {
+    font-size: 0.85rem;
+}
+
+h2 {
+    margin-bottom: 10px
+}
+
+.innerflex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.innerflex span {
+    padding-right: 10px;
+}
+
+span.syncstyle {
+    color: blue;
+    border: 1px solid black;
+    padding: 2px;
+    font-weight: bold;
+}
+
+footer #playcontrols img {
+    width: 30px;
+    padding: 0 25px;
+}
