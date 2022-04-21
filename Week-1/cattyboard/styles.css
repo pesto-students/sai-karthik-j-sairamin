@@ -4,32 +4,33 @@
     padding: 0;
 }
 
-nav{
+nav {
     min-width: 4%;
     height: 80vh;
     background-color: #F0F0F0;
     float: left;
 }
+
 img {
     background: transparent;
 }
 
 header.inline {
     width: 96%;
-    height: 45vh;
+    height: 44vh;
     background-color: #454545;
     float: right;
 }
 
 section.inline {
-    height: 35vh;
+    height: 36vh;
     width: 96%;
     /* background-color: rgb(72, 82, 235); */
     float: right;
 }
 
 div.clearfix {
-    clear: both ;
+    clear: both;
 }
 
 footer {
@@ -42,10 +43,10 @@ footer {
     align-items: center;
 }
 
-footer img{
-    width: 15vh;
-    margin: 10px;
-    padding: 5px;
+footer img {
+    width: 16vh;
+    margin: 12px;
+    padding: 4px;
 }
 
 .innerfooterflex {
@@ -55,13 +56,13 @@ footer img{
 }
 
 .innerfooterflex p {
-    padding: 3px;
+    padding: 4px;
 }
 
-nav img{
+nav img {
     display: block;
-    padding: 3vh 0;
-    width: 15px;
+    padding: 3.25vh 0;
+    width: 16px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -74,8 +75,8 @@ nav img{
 } */
 
 
-table{
-    margin: 15px;
+table {
+    margin: 16px;
     width: 96%;
     background: transparent;
     border-collapse: collapse;
@@ -97,12 +98,12 @@ header.inline {
 }
 
 header.inline img {
-    padding: 15px;
-    margin: 0 15px;
+    padding: 16px;
+    margin: 0 16px;
 }
 
 header div.container {
-    margin: 15px;
+    margin: 16px;
     display: flex;
     flex-direction: column;
     color: white;
@@ -114,7 +115,7 @@ header div.container p {
 }
 
 h2 {
-    margin-bottom: 10px
+    margin-bottom: 12px
 }
 
 .innerflex {
@@ -124,17 +125,17 @@ h2 {
 }
 
 .innerflex span {
-    padding-right: 10px;
+    padding-right: 12px;
 }
 
 span.syncstyle {
     color: blue;
     border: 1px solid black;
-    padding: 2px;
+    padding: 4px;
     font-weight: bold;
 }
 
 footer #playcontrols img {
-    width: 30px;
-    padding: 0 25px;
+    width: 32px;
+    padding: 0 24px;
 }
