@@ -130,4 +130,4 @@ The tree reflects the relationships and hierarchies between different tags. Tags
 
 1. [How Web Works](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#The_main_flow)
 
-2.[How Browser Rendering Works](https://blog.logrocket.com/how-browser-rendering-works-behind-scenes/)
+2. [How Browser Rendering Works](https://blog.logrocket.com/how-browser-rendering-works-behind-scenes/)
