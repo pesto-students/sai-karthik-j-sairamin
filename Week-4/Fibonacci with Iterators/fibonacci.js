@@ -1,3 +1,5 @@
+// fibonacci is an object which has been made "iterable" via for-of loop
+// by implementing [Symbol.iterator]() method.
 const fibonacci = {
     [Symbol.iterator]() {
         let a = 0;
@@ -18,13 +20,21 @@ const fibonacci = {
     }
 };
 
+// fiboPrinter applies for-of loop on the object is made iterable
 function fiboPrinter(iterableObj, limit) {
+    if(limit < 0) {
+        throw new Error("limit must be positive");
+    }
     for( const el of iterableObj) {
         if(el > limit) {
             break;
+            // when break is used, done property of object returned by next() 
+            // will be set to "true". So, iteration stops. 
         }
         console.log(el);
     }
 }
 
 fiboPrinter(fibonacci, 200);
+// fiboPrinter(fibonacci, -200); // throws error
+// fiboPrinter(fibonacci, Infinity); // no limits printer!!
