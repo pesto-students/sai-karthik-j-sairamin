@@ -9,7 +9,12 @@ const Header = (props) => {
     <React.Fragment>
       <div className="header">
         <div className="logo">
-          <div className="logo-text" onClick={handleClick}>
+          <div
+            className="logo-text"
+            onClick={() => {
+              props.choosePage("Home");
+            }}
+          >
             Go Vegan Link Shortener
           </div>
         </div>
