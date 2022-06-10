@@ -4,8 +4,6 @@
 
 ### NOTE: The "Week-10" Folder is part of the Parent repo.
 
-Live demo link of this App is >> https://react-vegan-link-shortener.netlify.app/
-
 ### Step 1 :
 
 Clone the project
