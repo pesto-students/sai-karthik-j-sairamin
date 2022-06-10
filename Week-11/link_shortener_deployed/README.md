@@ -1,6 +1,10 @@
 ## Follow these steps to run this application locally.
 
-Or view live demo link of this App is >> https://react-vegan-link-shortener.netlify.app/
+### NOTE: the "link_shortener" folder is a child git repo inside "Week-11" folder.
+
+### NOTE: The "Week-11" Folder is part of the Parent repo.
+
+Live demo link of this App is >> https://react-vegan-link-shortener.netlify.app/
 
 ### Step 1 :
 
@@ -8,7 +12,7 @@ Clone the project
 
 ### Step 2 :
 
-Browse to the project directory.
+Browse to the project directory "link_shortener" using `cd link_shortener`
 
 ### Step 3 :
 
