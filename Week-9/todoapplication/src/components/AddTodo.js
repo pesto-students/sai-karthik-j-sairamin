@@ -1,78 +1,86 @@
 import React, { useState, useRef, useContext, useEffect } from "react";
+import { TodoContext } from "./";
+import { v4 as generateUniqueID } from "uuid";
 import "../AppWideCSS.css";
-import TodoContext from "../store/todo-context";
-import { v4 as genUUID } from "uuid";
 
 const AddTodo = () => {
-  const ctx = useContext(TodoContext);
+  const importedTodoContext = useContext(TodoContext);
   const [isError, setIsError] = useState(false);
-  const [maxLen, setMaxLen] = useState(false);
+  const [maxTodoLengthReached, setMaxTodoLengthReached] = useState(false);
   const inputRef = useRef();
-  const [inputVal, setInputVal] = useState("");
+  const [inputTextValue, setInputTextValue] = useState("");
 
   useEffect(() => {
-    if (ctx.todoToEdit) {
-      setInputVal(ctx.todoToEdit.title);
+    if (importedTodoContext.todoBeingEdited) {
+      setInputTextValue(importedTodoContext.todoBeingEdited.title);
     }
-  }, [ctx.todoToEdit]);
+  }, [importedTodoContext.todoBeingEdited]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(ctx.todoToEdit);
-    console.log("submitted");
-    if (isError === false && maxLen === false) {
+    // console.log(importedTodoContext.todoBeingEdited);
+    if (isError === false && maxTodoLengthReached === false) {
       // valid input
       const todo = {
         title: inputRef.current.value,
-        id: genUUID(),
+        id: generateUniqueID(),
         isDone: false,
       };
-      console.log("new todo ", todo);
+      // console.log("new todo ", todo);
 
-      if (ctx.todoToEdit === null) {
-        console.log("adding to array");
-        ctx.onAdd(todo);
+      if (importedTodoContext.todoBeingEdited === null) {
+        // console.log("adding to array");
+        importedTodoContext.onAdd(todo);
       } else {
-        setInputVal(ctx.todoToEdit.title);
-        console.log("modifying array");
-        ctx.onEdit(ctx.todoToEdit.id, inputRef.current.value);
+        setInputTextValue(importedTodoContext.todoBeingEdited.title);
+        // console.log("modifying array");
+        importedTodoContext.onEdit(
+          importedTodoContext.todoBeingEdited.id,
+          inputRef.current.value
+        );
       }
       setIsError(false);
-      setMaxLen(false);
-      setInputVal(""); // reset input field
+      setMaxTodoLengthReached(false);
+      setInputTextValue(""); // reset input field
     }
   };
   const validateTodo = (event) => {
-    setInputVal(event.target.value);
+    setInputTextValue(event.target.value);
     if (inputRef.current.value.trim().length < 1) {
       setIsError(true);
     } else {
       setIsError(false);
     }
     if (inputRef.current.value.trim().length > 25) {
-      setMaxLen(true);
+      setMaxTodoLengthReached(true);
     } else {
-      setMaxLen(false);
+      setMaxTodoLengthReached(false);
     }
   };
   return (
     <form onSubmit={handleSubmit} className="addtodoform">
       <div className="errorzone">
         {isError && <p className="errors">Empty Todo is NOT Allowed!</p>}
-        {maxLen && <p className="errors">Error! Max 25 characters Allowed!</p>}
+        {maxTodoLengthReached && (
+          <p className="errors">Error! Max 25 characters Allowed!</p>
+        )}
       </div>
       <div>
         <input
-          value={inputVal}
+          value={inputTextValue}
           onChange={validateTodo}
-          className={isError || maxLen ? "invalidInput" : "validInput"}
+          className={
+            isError || maxTodoLengthReached ? "invalidInput" : "validInput"
+          }
           ref={inputRef}
           type="text"
           required
           maxLength={26}
         ></input>
         <button type="submit">
-          {ctx.todoToEdit !== null ? "Edit Todo" : "Add Todo"}
+          {importedTodoContext.todoBeingEdited !== null
+            ? "Edit Todo"
+            : "Add Todo"}
         </button>
       </div>
     </form>

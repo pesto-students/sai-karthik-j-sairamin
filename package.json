@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/pesto-students/sai-karthik-j-sairamin#readme",
   "dependencies": {
-    "jest": "^28.0.3"
+    "jest": "^28.0.3",
+    "lodash": "^4.17.21",
+    "prop-types": "^15.8.1"
   }
 }

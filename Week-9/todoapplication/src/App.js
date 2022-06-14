@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import "./AppWideCSS.css";
-import TodoPage from "./TodoPage";
-import TodoContext from "./store/todo-context";
+import { TodoPage, TodoContext } from "./components";
 
-const App = (props) => {
+const App = () => {
   const dummyData = [
     {
       title: "Complete Pesto Assignments",
@@ -37,16 +36,16 @@ const App = (props) => {
   const onEdit = (idOfTodoToEdit, newTitle) => {
     const newData = data.map((todo) => {
       if (todo.id === idOfTodoToEdit) {
-        console.log("changing title property of a given ID");
+        // console.log("changing title property of a given ID");
         todo.title = newTitle;
       }
       return todo;
     });
     setData(newData);
-    console.log("before", todoToEdit);
+    // console.log("before", todoToEdit);
     setTodoToEdit(null);
-    console.log("after", todoToEdit);
-    console.log("Editing method is running");
+    // console.log("after", todoToEdit);
+    // console.log("Editing method is running");
   };
 
   const onDone = (todoIdToBeSetAsDone) => {
@@ -64,8 +63,8 @@ const App = (props) => {
   return (
     <TodoContext.Provider
       value={{
-        todosList: data,
-        todoToEdit,
+        todoList: data,
+        todoBeingEdited: todoToEdit,
         setTodoToEdit,
         onAdd,
         onDelete,

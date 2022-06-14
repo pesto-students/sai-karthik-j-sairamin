@@ -1,17 +1,16 @@
 import React, { useContext } from "react";
+import { TodoContext } from "./";
 import "../AppWideCSS.css";
-import TodoContext from "../store/todo-context";
 
 function Todo(props) {
-  const ctx = useContext(TodoContext);
-  console.log(ctx.todoToEdit);
+  const importedTodoContext = useContext(TodoContext);
 
   return (
     <li className="todo">
       <div>
         <input
           type="checkbox"
-          onChange={() => ctx.onDone(props.todo.id)}
+          onChange={() => importedTodoContext.onDone(props.todo.id)}
           checked={props.todo.isDone}
         ></input>
         <span className={props.todo.isDone ? "strike" : "nostrike"}>
@@ -22,12 +21,12 @@ function Todo(props) {
         <i
           className="fa-solid fa-pen-to-square"
           onClick={() => {
-            ctx.setTodoToEdit(props.todo);
+            importedTodoContext.setTodoToEdit(props.todo);
           }}
         ></i>
         <i
           className="fa-solid fa-trash-can"
-          onClick={() => ctx.onDelete(props.todo.id)}
+          onClick={() => importedTodoContext.onDelete(props.todo.id)}
         ></i>
       </div>
     </li>

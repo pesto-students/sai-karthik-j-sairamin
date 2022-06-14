@@ -1,6 +1,6 @@
 import React from "react";
+import { AddTodo } from "./";
 import "../AppWideCSS.css";
-import AddTodo from "./AddTodo";
 
 const Header = (props) => {
   return (
