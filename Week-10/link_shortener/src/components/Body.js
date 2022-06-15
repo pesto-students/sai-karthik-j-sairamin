@@ -1,5 +1,5 @@
 import "../AppWideCSS.css";
-import React, { useState } from "react";
+import React from "react";
 import { About, Contact, Home, Privacy } from "./";
 
 const Body = ({ page, choosePage }) => {
