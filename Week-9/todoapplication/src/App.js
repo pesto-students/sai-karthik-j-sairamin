@@ -24,35 +24,33 @@ const App = () => {
   const [todoToEdit, setTodoToEdit] = useState(null);
 
   const onAdd = (newTodo) => {
+    // adding new todo
     const newData = [...data, newTodo];
     setData(newData);
   };
 
   const onDelete = (idOfTodoToBeDeleted) => {
+    // deleting a todo based on ID
     const newData = data.filter((todo) => todo.id !== idOfTodoToBeDeleted);
     setData(newData);
   };
 
   const onEdit = (idOfTodoToEdit, newTitle) => {
+    // changing title property of a given ID
     const newData = data.map((todo) => {
       if (todo.id === idOfTodoToEdit) {
-        // console.log("changing title property of a given ID");
         todo.title = newTitle;
       }
       return todo;
     });
     setData(newData);
-    // console.log("before", todoToEdit);
     setTodoToEdit(null);
-    // console.log("after", todoToEdit);
-    // console.log("Editing method is running");
   };
 
   const onDone = (todoIdToBeSetAsDone) => {
     // change isDone property to "true" for that ID
     const newData = data.map((todo) => {
       if (todo.id === todoIdToBeSetAsDone) {
-        console.log("changing isDone property of a given ID");
         todo.isDone = !todo.isDone;
       }
       return todo;

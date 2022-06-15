@@ -3,7 +3,7 @@ import React from "react";
 const TodoContext = React.createContext({
   todoList: [],
   todoBeingEdited: null,
-  setTodoToEdited: () => {},
+  setTodoToEdit: () => {},
   onAdd: () => {},
   onDelete: () => {},
   onEdit: () => {},
