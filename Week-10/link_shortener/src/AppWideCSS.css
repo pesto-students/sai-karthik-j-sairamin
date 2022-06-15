@@ -1,20 +1,14 @@
-.App {
-}
-
 .header {
   height: 80px;
   position: relative;
   width: 100%;
   background-color: #fbc34d;
   text-align: center;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.header .logo {
-}
 .header div:first-child {
   margin-left: 24px;
 }
@@ -63,19 +57,14 @@
 
 .body {
   position: relative;
-  /* top: 80px; */
   min-height: 72vh;
-  /* background-color: cyan; */
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   padding: 0px 24px;
   padding-bottom: 90px;
   font-size: 0.9rem;
-
   text-align: center;
 }
 
@@ -90,17 +79,19 @@
 }
 
 .home {
-  min-height: 420px;
+  min-height: 540px;
   margin: 0 auto;
   width: 480px;
 }
 
 .home img {
   display: block;
-  width: 480px;
+  width: 360px;
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
+  border: 2px solid greenyellow;
+  border-radius: 24px;
 }
 
 .home p.show {
@@ -109,7 +100,6 @@
 
 .home p.hide {
   display: none;
-  /* visibility: hidden; */
 }
 
 .body .output-zone {
