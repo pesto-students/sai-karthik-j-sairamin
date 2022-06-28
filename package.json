@@ -1,0 +1,25 @@
+{
+  "name": "sai-karthik-j-sairamin",
+  "version": "1.0.0",
+  "description": "Welcome to Pesto assignments.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "tests": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pesto-students/sai-karthik-j-sairamin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pesto-students/sai-karthik-j-sairamin/issues"
+  },
+  "homepage": "https://github.com/pesto-students/sai-karthik-j-sairamin#readme",
+  "dependencies": {
+    "jest": "^28.0.3",
+    "lodash": "^4.17.21"
+  }
+}
