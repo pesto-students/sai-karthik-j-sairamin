@@ -1,12 +1,9 @@
 import React, { useContext } from "react";
-import { TodoContext } from "./";
+import { todoContext } from "../../store";
 import PropTypes from "prop-types";
-// import { _noop } from "lodash/noop";
 
-import "../AppWideCSS.css";
-
-function Todo({ todo: { id }, todo: { isDone }, todo: { title }, todo }) {
-  const { onDelete, onDone, setTodoToEdit } = useContext(TodoContext);
+function Todo({ todo: { id, isDone, title }, todo }) {
+  const { onDelete, onDone, setTodoToEdit } = useContext(todoContext);
   return (
     <li className="todo">
       <div>

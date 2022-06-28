@@ -1,6 +1,6 @@
 import React from "react";
 
-const TodoContext = React.createContext({
+const todoContext = React.createContext({
   todoList: [],
   todoBeingEdited: null,
   setTodoToEdit: () => {},
@@ -10,4 +10,4 @@ const TodoContext = React.createContext({
   onDone: () => {},
 });
 
-export default TodoContext;
+export default todoContext;

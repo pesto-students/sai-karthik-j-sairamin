@@ -1,14 +1,14 @@
 import React, { useState, useRef, useContext, useEffect } from "react";
-import { TodoContext } from "./";
+import { todoContext } from "../../store";
 import { v4 as generateUniqueID } from "uuid";
-import "../AppWideCSS.css";
 
 const AddTodo = () => {
-  const importedTodoContext = useContext(TodoContext);
+  const importedTodoContext = useContext(todoContext);
   const [isError, setIsError] = useState(false);
-  const [maxTodoLengthReached, setMaxTodoLengthReached] = useState(false);
   const inputRef = useRef();
   const [inputTextValue, setInputTextValue] = useState("");
+  const [maxTodoLengthReached, setMaxTodoLengthReached] = useState(false);
+  const MAX_ALLOWED_TODO_CHARACTER_LENTH = 26;
 
   useEffect(() => {
     if (importedTodoContext.todoBeingEdited) {
@@ -51,18 +51,21 @@ const AddTodo = () => {
     } else {
       setIsError(false);
     }
-    if (inputRef.current.value.trim().length > 25) {
+    if (
+      inputRef.current.value.length >= MAX_ALLOWED_TODO_CHARACTER_LENTH &&
+      inputRef.current.value.trim().length !== 0
+    ) {
       setMaxTodoLengthReached(true);
     } else {
       setMaxTodoLengthReached(false);
     }
   };
   return (
-    <form onSubmit={handleSubmit} className="addtodoform">
+    <form onSubmit={handleSubmit} className="addtodoform header">
       <div className="errorzone">
         {isError && <p className="errors">Empty Todo is NOT Allowed!</p>}
         {maxTodoLengthReached && (
-          <p className="errors">Error! Max 25 characters Allowed!</p>
+          <p className="errors">Error! Can't exceed 25 characters!</p>
         )}
       </div>
       <div>
@@ -75,7 +78,7 @@ const AddTodo = () => {
           ref={inputRef}
           type="text"
           required
-          maxLength={26}
+          maxLength={MAX_ALLOWED_TODO_CHARACTER_LENTH}
         ></input>
         <button type="submit">
           {importedTodoContext.todoBeingEdited !== null

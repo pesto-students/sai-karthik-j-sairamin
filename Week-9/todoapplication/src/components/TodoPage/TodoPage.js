@@ -1,8 +1,7 @@
 import React from "react";
-import "./AppWideCSS.css";
-import { Header, Content } from "./components/index";
+import { Header, Content } from "..";
 
-const TodoPage = (props) => {
+const TodoPage = () => {
   return (
     <div className="todopage">
       <Header />

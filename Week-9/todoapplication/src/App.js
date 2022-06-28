@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./AppWideCSS.css";
-import { TodoPage, TodoContext } from "./components";
+import { TodoPage } from "./components";
+import { todoContext } from "./store";
 
 const App = () => {
   const dummyData = [
@@ -59,7 +60,7 @@ const App = () => {
   };
 
   return (
-    <TodoContext.Provider
+    <todoContext.Provider
       value={{
         todoList: data,
         todoBeingEdited: todoToEdit,
@@ -81,7 +82,7 @@ const App = () => {
         </p>
         <TodoPage />
       </div>
-    </TodoContext.Provider>
+    </todoContext.Provider>
   );
 };
 
