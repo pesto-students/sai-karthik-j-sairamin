@@ -8,7 +8,7 @@ const AddTodo = () => {
   const inputRef = useRef();
   const [inputTextValue, setInputTextValue] = useState("");
   const [maxTodoLengthReached, setMaxTodoLengthReached] = useState(false);
-  const MAX_ALLOWED_TODO_CHARACTER_LENTH = 26;
+  const MAX_ALLOWED_TODO_CHARACTER_LENGTH = 26;
 
   useEffect(() => {
     if (importedTodoContext.todoBeingEdited) {
@@ -52,7 +52,7 @@ const AddTodo = () => {
       setIsError(false);
     }
     if (
-      inputRef.current.value.length >= MAX_ALLOWED_TODO_CHARACTER_LENTH &&
+      inputRef.current.value.length >= MAX_ALLOWED_TODO_CHARACTER_LENGTH &&
       inputRef.current.value.trim().length !== 0
     ) {
       setMaxTodoLengthReached(true);
@@ -78,7 +78,7 @@ const AddTodo = () => {
           ref={inputRef}
           type="text"
           required
-          maxLength={MAX_ALLOWED_TODO_CHARACTER_LENTH}
+          maxLength={MAX_ALLOWED_TODO_CHARACTER_LENGTH}
         ></input>
         <button type="submit">
           {importedTodoContext.todoBeingEdited !== null
