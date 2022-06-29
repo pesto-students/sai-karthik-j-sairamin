@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "./AppWideCSS.css";
-import Header from "./components/Header";
-import Body from "./components/Body";
-import Footer from "./components/Footer";
+import { Body, Header, Footer } from "./components";
+import PropTypes from "prop-types";
 
 function App() {
   const [page, setPage] = useState("Home");
@@ -17,5 +16,14 @@ function App() {
     </div>
   );
 }
+
+App.propTypes = {
+  page: PropTypes.string,
+  choosePage: PropTypes.func,
+};
+
+App.defaultProps = {
+  page: "Home",
+};
 
 export default App;

@@ -1,9 +1,8 @@
-import "../AppWideCSS.css";
 import React from "react";
 
-const Header = (props) => {
+const Header = ({ choosePage }) => {
   function handleClick(event) {
-    props.choosePage(event.target.innerText);
+    choosePage(event.target.innerText);
   }
   return (
     <React.Fragment>
@@ -12,7 +11,7 @@ const Header = (props) => {
           <div
             className="logo-text"
             onClick={() => {
-              props.choosePage("Home");
+              choosePage("Home");
             }}
           >
             Go Vegan Link Shortener
@@ -31,4 +30,4 @@ const Header = (props) => {
   );
 };
 
-export default Header;
+export { Header };

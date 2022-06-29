@@ -1,7 +1,6 @@
-import "../AppWideCSS.css";
 import React from "react";
 
-const Footer = (props) => {
+const Footer = ({ choosePage }) => {
   return (
     <React.Fragment>
       <div className="footer">
@@ -13,7 +12,7 @@ const Footer = (props) => {
           <span
             className="footerlink"
             onClick={() => {
-              props.choosePage("Vegan Policy");
+              choosePage("Vegan Policy");
             }}
           >
             Go Vegan Policy

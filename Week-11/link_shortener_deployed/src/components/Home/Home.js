@@ -1,17 +1,13 @@
-import "../AppWideCSS.css";
 import React, { useState } from "react";
-import About from "./About";
-import Contact from "./Contact";
-import Privacy from "./Privacy";
-import img1 from "../livekindly.gif";
-import img2 from "../livekindly.jpg";
+import { loadingImage, warningImage } from "../../images";
 
-const Home = (props) => {
-  const [tosAgreed, setTosAgreed] = useState(false);
-  const [url, setUrl] = useState("");
-  const [showWarning, setShowWarning] = useState(false);
+const Home = ({ choosePage }) => {
   const [finalOutput, setfinalOutput] = useState("");
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [showWarning, setShowWarning] = useState(false);
+  const [tosAgreed, setTosAgreed] = useState(false);
+  const [url, setUrl] = useState("");
 
   function tosHandler() {
     if (!tosAgreed) {
@@ -19,9 +15,11 @@ const Home = (props) => {
     }
     setTosAgreed((prevState) => !prevState);
   }
+
   function handleUrlInput(event) {
     setUrl(event.target.value);
   }
+
   function showCautionMsg() {
     if (tosAgreed) {
       setShowWarning(false);
@@ -29,12 +27,17 @@ const Home = (props) => {
       setShowWarning(true);
     }
   }
+
+  function hideCautionMsg() {
+    setShowWarning(false);
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
-    setfinalOutput("");
-
     if (tosAgreed) {
+      setfinalOutput("");
       setIsError(false);
+      setIsLoading(true);
       const sendShortenURLRequest = async function () {
         try {
           const response = await fetch(
@@ -43,31 +46,34 @@ const Home = (props) => {
               method: "POST",
             }
           );
-          console.log(response.ok);
 
           const json = await response.json();
           return json;
         } catch (err) {
+          // handles errors when no internet
           setfinalOutput(`Error! ${err.message}`);
           setIsError(true);
+          setIsLoading(false);
         }
       };
 
       sendShortenURLRequest().then((data) => {
-        console.log(data);
         if (data.ok) {
           setfinalOutput(`https://shrtco.de/${data.result.code}`);
         } else {
+          // successful connection but errors
           setfinalOutput(data.error);
           setIsError(true);
         }
+        setIsLoading(false);
       });
     } else {
-      console.log("You MUST Agree to TOS");
+      //   console.log("You MUST Agree to TOS");
       setShowWarning(true);
     }
   }
 
+  // This copies the finalOutput to clipboard
   const handleCopy = () => {
     navigator.clipboard.writeText(finalOutput);
   };
@@ -76,11 +82,11 @@ const Home = (props) => {
       <h2>My friend... It's time to "Go Vegan"</h2>
       <p>You can shorten URLs only if you agree to "Go Vegan"</p>
       <p>
-        I accept the{" "}
+        I have no choice. 😈 So I accept{" "}
         <span
           className="toslink"
           onClick={() => {
-            props.choosePage("Vegan Policy");
+            choosePage("Vegan Policy");
           }}
         >
           Go Vegan
@@ -101,18 +107,24 @@ const Home = (props) => {
           type="submit"
           className="button-styled"
           onMouseOver={showCautionMsg}
-          onMouseOut={showCautionMsg}
+          onMouseOut={hideCautionMsg}
         >
           Shorten!
         </button>
       </form>
       <div className="output-zone">
+        {isLoading && (
+          <p>
+            <img className="loadingimage" src={loadingImage} alt="loading..." />
+          </p>
+        )}
+
         <p className={isError ? "show" : "hide"}>
           <span className="errormsg">{finalOutput}</span>
         </p>
         <p
           className={
-            !isError && finalOutput.length !== 0
+            !isError && !showWarning && finalOutput.length !== 0
               ? "show successmsg"
               : "hide successmsg"
           }
@@ -125,40 +137,16 @@ const Home = (props) => {
             Copy
           </button>
           <br />
-          <img
-            src={Math.random() < 0.5 ? img1 : img2}
-            alt="advantages of being vegan"
-          ></img>
         </p>
         <p className={showWarning ? "show" : "hide"}>
           <span className="errormsg">
             You MUST accept our "Go Vegan Policy" !
           </span>
+          <img src={warningImage} alt="angry vegan cow"></img>
         </p>
       </div>
     </div>
   );
 };
 
-const Body = (props) => {
-  console.log(props);
-  let DisplayedPage = <p>Loading...</p>;
-  if (props.page === "Home" || props.page === "FatCow Link Shortener") {
-    DisplayedPage = <Home choosePage={props.choosePage} />;
-  } else if (props.page === "About Us") {
-    DisplayedPage = <About />;
-  } else if (props.page === "Vegan Policy") {
-    DisplayedPage = <Privacy />;
-  } else if (props.page === "Contact Us") {
-    DisplayedPage = <Contact />;
-  } else {
-    DisplayedPage = <p>Not Found 404 </p>;
-  }
-  return (
-    <React.Fragment>
-      <div className="body">{DisplayedPage}</div>
-    </React.Fragment>
-  );
-};
-
-export default Body;
+export { Home };

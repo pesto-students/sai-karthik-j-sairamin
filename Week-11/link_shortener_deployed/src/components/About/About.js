@@ -1,7 +1,6 @@
 import React from "react";
-import "../AppWideCSS.css";
 
-const About = (props) => {
+const About = () => {
   return (
     <>
       <h2>About</h2>
