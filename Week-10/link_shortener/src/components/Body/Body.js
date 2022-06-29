@@ -1,6 +1,5 @@
-import "../AppWideCSS.css";
 import React from "react";
-import { About, Contact, Home, Privacy } from "./";
+import { About, Contact, Home, Privacy } from "..";
 
 const Body = ({ page, choosePage }) => {
   let renderedContent = <p>Loading...</p>;

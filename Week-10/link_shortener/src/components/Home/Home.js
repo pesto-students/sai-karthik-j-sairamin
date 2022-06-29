@@ -1,10 +1,10 @@
-import "../AppWideCSS.css";
 import React, { useState } from "react";
-import warningImage from "../angry.gif";
+import { loadingImage, warningImage } from "../../images";
 
 const Home = ({ choosePage }) => {
   const [finalOutput, setfinalOutput] = useState("");
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [showWarning, setShowWarning] = useState(false);
   const [tosAgreed, setTosAgreed] = useState(false);
   const [url, setUrl] = useState("");
@@ -34,10 +34,10 @@ const Home = ({ choosePage }) => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    setfinalOutput("");
-
     if (tosAgreed) {
+      setfinalOutput("");
       setIsError(false);
+      setIsLoading(true);
       const sendShortenURLRequest = async function () {
         try {
           const response = await fetch(
@@ -50,8 +50,10 @@ const Home = ({ choosePage }) => {
           const json = await response.json();
           return json;
         } catch (err) {
+          // handles errors when no internet
           setfinalOutput(`Error! ${err.message}`);
           setIsError(true);
+          setIsLoading(false);
         }
       };
 
@@ -59,9 +61,11 @@ const Home = ({ choosePage }) => {
         if (data.ok) {
           setfinalOutput(`https://shrtco.de/${data.result.code}`);
         } else {
+          // successful connection but errors
           setfinalOutput(data.error);
           setIsError(true);
         }
+        setIsLoading(false);
       });
     } else {
       //   console.log("You MUST Agree to TOS");
@@ -78,7 +82,7 @@ const Home = ({ choosePage }) => {
       <h2>My friend... It's time to "Go Vegan"</h2>
       <p>You can shorten URLs only if you agree to "Go Vegan"</p>
       <p>
-        I have no choice. So I accept{" "}
+        I have no choice. 😈 So I accept{" "}
         <span
           className="toslink"
           onClick={() => {
@@ -109,6 +113,12 @@ const Home = ({ choosePage }) => {
         </button>
       </form>
       <div className="output-zone">
+        {isLoading && (
+          <p>
+            <img className="loadingimage" src={loadingImage} alt="loading..." />
+          </p>
+        )}
+
         <p className={isError ? "show" : "hide"}>
           <span className="errormsg">{finalOutput}</span>
         </p>
@@ -139,4 +149,4 @@ const Home = ({ choosePage }) => {
   );
 };
 
-export default Home;
+export { Home };

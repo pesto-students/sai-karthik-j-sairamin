@@ -1,16 +1,31 @@
-import "../AppWideCSS.css";
 import React from "react";
 
-const Contact = (props) => {
+const Privacy = () => {
   return (
     <>
-      <h2>Contact</h2>
+      <h2>Go Vegan Policy</h2>
+
       <p>
         Nullam at dui sapien. Vestibulum vel sagittis est. Mauris quis varius
         magna. Ut non arcu ultricies felis aliquet auctor. Aenean congue libero
         eu felis commodo iaculis. Nulla et ante eu tellus sollicitudin feugiat.
         Pellentesque habitant morbi tristique senectus et netus et malesuada
         fames ac turpis egestas.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+        cursus vel ex quis congue. Morbi eget eleifend erat. Maecenas ligula
+        felis, gravida ut convallis in, tincidunt at urna. Proin sed nisl vel
+        tortor viverra interdum nec a mauris. Nulla facilisi. Morbi rutrum, eros
+        in tincidunt faucibus, arcu libero posuere libero, sit amet fringilla
+        enim purus et dolor. Fusce at fringilla odio. Aliquam sit amet nulla
+        aliquam, sagittis eros a, euismod nulla. Morbi et diam leo. Pellentesque
+        scelerisque nec sapien vel egestas. Pellentesque tempus lectus ac risus
+        convallis, ac fringilla elit fermentum. Maecenas ultricies enim eu magna
+        lobortis, in tempus erat convallis. Donec ornare eros nulla, vitae
+        posuere felis fermentum quis. Aliquam ac malesuada risus. Class aptent
+        taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+        himenaeos.
       </p>
       <p>
         Pellentesque sed placerat leo, nec hendrerit massa. Suspendisse orci
@@ -25,22 +40,8 @@ const Contact = (props) => {
         velit massa eget justo. Proin pretium tincidunt orci, interdum semper
         arcu vestibulum vel. Maecenas porta quis leo vitae faucibus.
       </p>
-      <p>
-        Nam porta elit quis lorem feugiat, non tempus augue tempus. Cras eu
-        purus tellus. Aliquam sit amet lacus diam. Donec lacus ex, maximus sit
-        amet imperdiet nec, pretium a ligula. Morbi sed augue tellus. Etiam
-        sodales nibh pharetra scelerisque vulputate. Vestibulum eget euismod
-        elit. Integer sed suscipit eros, id dapibus ante. Duis quis congue
-        augue, ut blandit metus. Quisque pulvinar tempus quam, at molestie
-        tellus interdum vitae. Suspendisse mauris mauris, laoreet eu posuere a,
-        bibendum sit amet arcu. Aliquam finibus, nisi vel congue iaculis, ante
-        urna malesuada urna, ac viverra odio leo nec nisi. Sed sed fermentum
-        ligula, vel lacinia nisl. Pellentesque dictum massa ut nisi dapibus
-        tristique. Donec luctus pretium magna non varius. Integer varius neque
-        felis, sed ultricies ante hendrerit ut.
-      </p>
     </>
   );
 };
 
-export default Contact;
+export { Privacy };

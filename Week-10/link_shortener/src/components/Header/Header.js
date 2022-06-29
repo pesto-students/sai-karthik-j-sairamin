@@ -1,4 +1,3 @@
-import "../AppWideCSS.css";
 import React from "react";
 
 const Header = ({ choosePage }) => {
@@ -31,4 +30,4 @@ const Header = ({ choosePage }) => {
   );
 };
 
-export default Header;
+export { Header };

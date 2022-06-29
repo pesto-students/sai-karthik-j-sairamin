@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./AppWideCSS.css";
 import { Body, Header, Footer } from "./components";
 import PropTypes from "prop-types";
-// import { _noop } from "lodash/noop";
 
 function App() {
   const [page, setPage] = useState("Home");
