@@ -1,0 +1,126 @@
+
+header {
+    text-align: center;
+    margin: 20px;
+}
+
+section#top {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+figure img {
+    width: 100%;
+}
+
+#main-section {
+    display: flex;
+    margin: 40px;
+
+}
+
+#main-section section {
+    width: 50%;
+    text-align: justify;
+    margin: 25px 10px;
+}
+
+header h3 {
+    text-align: left;
+    text-transform: uppercase;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+article header {
+    margin-left: 0;
+}
+
+label {
+    display: inline-block;
+}
+
+footer {
+    text-align: center;
+    margin: 40px 0;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+}
+
+section#form-section{
+    margin: 40px;
+    /* background-color: aqua; */
+    width: 45%;
+}
+
+form {
+    margin: 20px 0;
+}
+
+form label {
+    padding: 15px 20px;
+}
+
+input {
+    border: 1px solid #7a7676;
+    padding: 8px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+select {
+    border: 1px solid #7a7676;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+label.space {
+    display: inline-block;
+    width: 27%;
+    text-align: right;
+}
+
+#checkbox {
+    padding: 10px 20px;
+    padding-left: 55px;
+}
+
+#checkbox label {
+    display: inline;
+    padding: 0;
+}
+label.less {
+    padding: 0 5px;
+}
+
+input[type="submit"] {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+
+}
+
+
+input[type="submit"]:hover {
+    display: block;
+    margin: 10px auto;
+    background-color: aqua;
+    padding: 10px 20px;
+}
+
+@media only screen and (max-width: 740px) {
+    #main-section {
+        display: block;
+    }
+    section#form-section{
+        margin: 40px;
+        /* background-color: aqua; */
+        width: 80%;
+    }
+    #main-section section {
+        width: 100%;
+        text-align: justify;
+        margin: 25px 10px;
+    }
+  }

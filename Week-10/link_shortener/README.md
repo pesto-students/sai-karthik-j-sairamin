@@ -1,0 +1,23 @@
+## Follow these steps to run this application locally.
+
+### NOTE: the "link_shortener" folder is a child git repo inside "Week-10" folder.
+
+### NOTE: The "Week-10" Folder is part of the Parent repo.
+
+### Step 1 :
+
+Clone the project
+
+### Step 2 :
+
+Browse to the project directory "link_shortener" using `cd link_shortener`
+
+### Step 3 :
+
+Run `npm install` to download all required node modules
+
+### Step 4 :
+
+Run `npm start` to run the local version of the application.
+
+Credits: This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
