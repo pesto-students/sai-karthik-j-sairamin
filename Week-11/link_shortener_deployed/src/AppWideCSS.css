@@ -1,0 +1,224 @@
+.header {
+  height: 80px;
+  position: relative;
+  width: 100%;
+  background-color: #fbc34d;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header div:first-child {
+  margin-left: 24px;
+}
+
+.header div:last-child {
+  margin-right: 24px;
+}
+.header .logo-text {
+  background-color: black;
+  border-radius: 12px;
+  color: gold;
+  font-size: 1.4rem;
+  padding: 8px 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.header ul {
+  list-style: none;
+}
+
+.header .menu ul {
+  display: flex;
+}
+
+.header .menu ul li {
+  padding: 8px 8px;
+
+  background-color: #fbc34d;
+  color: black;
+  border: 1px dashed black;
+
+  border-radius: 24px 48px;
+  font-weight: bold;
+  transition: all 1.2s;
+}
+
+.header .menu ul li:hover {
+  background-color: rgb(0, 0, 0);
+  color: gold;
+  cursor: pointer;
+  border: 1px black dashed;
+  border-radius: 96px 28px;
+  font-weight: bold;
+}
+
+.body {
+  position: relative;
+  min-height: 72vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 24px;
+  padding-bottom: 90px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.body .errormsg {
+  color: red;
+  font-weight: bold;
+}
+
+.body .successmsg {
+  color: blue;
+  font-weight: bold;
+}
+
+.home {
+  min-height: 540px;
+  margin: 0 auto;
+  width: 480px;
+}
+
+.home img {
+  display: block;
+  width: 360px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid darkgreen;
+  border-radius: 24px;
+}
+
+div.output-zone img.loadingimage {
+  width: 10%;
+  border: 2px solid darkgreen;
+}
+
+.home p.show {
+  display: block;
+}
+
+.home p.hide {
+  display: none;
+}
+
+.body .output-zone {
+  min-width: 200px;
+  min-height: 80px;
+  text-align: center;
+}
+
+.body input[type="url"] {
+  border: none;
+  outline: 1px solid darkgreen;
+  outline-style: dashed;
+  outline-width: 2px;
+  border-radius: 5px;
+  height: 36px;
+  padding: 0 8px;
+  font-size: 1.1rem;
+}
+
+/* CSS */
+.button-styled {
+  align-items: center;
+  appearance: none;
+  background-color: #fcfcfd;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  color: #36395a;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  height: 36px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 8px;
+  padding-right: 8px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 0.9rem;
+  margin-left: 12px;
+}
+
+.button-styled:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-styled:active {
+  box-shadow: #d6d6e7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+.body span.toslink {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.body span.toslink:hover {
+  color: blue;
+}
+
+.footer {
+  background-color: #e4d2a3;
+  position: fixed;
+  width: 100%;
+  min-height: 80px;
+  bottom: 0px;
+  left: 0px;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer .footerlink {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.footer i {
+  padding: 4px;
+  margin: 4px;
+  transition: all 1s;
+}
+
+.footer i.fa-facebook {
+  cursor: pointer;
+  color: #4267b2;
+}
+
+.footer i.fa-twitter {
+  cursor: pointer;
+  color: #1da1f2;
+}
+
+.footer i.fa-whatsapp {
+  cursor: pointer;
+  color: green;
+}
+
+.footer p:first-child {
+  width: 70%;
+  margin-left: 24px;
+}
+.footer p:last-child {
+  width: 25%;
+  margin-right: 24px;
+  text-align: right;
+}
